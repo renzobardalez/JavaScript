@@ -3,4 +3,4 @@ let tipoMovimiento = 0 /* si inventario  es true = Compra, venta, intercambio si
 let cuentaBancaria = 0
 let total = 0 /* total del movimiento */
 
-
+prompt("Ingrese su usario")
