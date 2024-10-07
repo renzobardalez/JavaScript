@@ -7,49 +7,46 @@ let user = ""
 
 do{
     while (!inventario.trim()){
-        inventario = prompt("¿Qué tipo de movimieto hará?.\n Bancario = 0 \n Inventario = 1 \n En caso desee terminar, escriba salir.")
+        inventario = prompt("Bienvenido \n ¿Qué tipo de movimieto desea hacer?. \n Escriba el número de movimiento: \n Bancario = 0 \n Inventario = 1 \n En caso desee terminar, escriba salir.")
         if(!inventario){
-            alert("El campo no puede estar vacío. Inténtelo de nuevo.")
+            alert("El campo no puede estar vacío. Inténtelo de nuevo.");
         }
     }
-    if(inventario !== 0 || inventario !== 1){
         if(inventario == 0){
             tipoMovimiento = parseInt(prompt("Escriba el número del tipo de movimiento de la lista: \n Egreso = 0\n Ingreso = 1 \n Transferencia = 2"))
-            if(tipoMovimiento === 0 || tipoMovimiento === 1 || tipoMovimiento === 2 ){
                 switch(tipoMovimiento){
-                case 0: 
-                    alert(`Ha seleccionado hacer un movimiento Bancario tipo Egreso}`)
-                break
-                case 1: 
-                alert(`Ha seleccionado hacer un movimientoB Bancario tipo Ingreso`)
-                break
-                case 2: 
-                alert(`Ha seleccionado hacer un movimiento Bancario tipo Transferencia`)     
-                break
-                }
-            } else{
-                alert("Ingrese un tipo de movimiento válido")
-            }   
-        }
-            if(inventario == 1){
+                    case 0: 
+                        alert(`Ha seleccionado hacer un movimiento Bancario tipo Egreso`);
+                        break;
+                    case 1: 
+                        alert(`Ha seleccionado hacer un movimiento Bancario tipo Ingreso`);
+                        break;
+                    case 2: 
+                        alert(`Ha seleccionado hacer un movimiento Bancario tipo Transferencia`);     
+                        break;
+                    default:
+                        alert("Ingrese un tipo de movimiento válido");
+                        continue;
+                    }        
+        } else if(inventario === 1){
                 tipoMovimiento = parseInt(prompt("Escriba el número del tipo de movimiento de la lista: \n Compra = 0\n Venta = 1 \n Intercambio = 2"))
-                if(tipoMovimiento === 0 || tipoMovimiento === 1 || tipoMovimiento === 2 ){
                     switch(tipoMovimiento){
-                        case 0: 
-                            alert(`Ha seleccionado hacer un movimiento de Inventario tipo Compra}`)
-                        break
-                        case 1: 
-                        alert(`Ha seleccionado hacer un movimiento de Inventario tipo Venta`)
-                        break
-                        case 2: 
-                        alert(`Ha seleccionado hacer un movimiento de Inventario tipo Intercambio`)     
-                        break
-                        }
-                } else{
-                    alert("Ingrese un tipo de movimiento válido")
-                }
-            }
-    } else{
-    alert("Valor ingresado incorrecto. Ingrese 0 para movimiento bancario, 1 para movimiento de inventario o Salir para finalizar")
+                            case 0: 
+                                alert(`Ha seleccionado hacer un movimiento de Inventario tipo Compra`);
+                                break;
+                            case 1: 
+                                alert(`Ha seleccionado hacer un movimiento de Inventario tipo Venta`);
+                                break;
+                            case 2: 
+                                alert(`Ha seleccionado hacer un movimiento de Inventario tipo Intercambio`); 
+                                break;
+                            default:
+                                alert("Ingrese un tipo de movimiento válido");
+                                continue;
+                            }
+        } else if (inventario !== "salir"){
+        alert("Valor ingresado incorrecto. Ingrese 0 para movimiento bancario, 1 para movimiento de inventario o Salir para finalizar")
+        continue;
     }
-}while (inventario !== "salir")
+    inventario = ""
+}while (inventario !== "salir");
